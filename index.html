@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Sosyal Medya Rehberi</title>
+  <title>Sosyal Medya Büyütme</title>
   <style>
     body {
       margin: 0;
@@ -11,15 +11,21 @@
       color: white;
     }
 
-    header {
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       background: #1e293b;
-      padding: 20px;
-      text-align: center;
-      font-size: 22px;
+      padding: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
     }
 
-    .container {
+    .hero {
       text-align: center;
       padding: 80px 20px;
     }
@@ -33,37 +39,80 @@
       font-size: 18px;
     }
 
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+    }
+
     .btn {
-      margin-top: 20px;
-      padding: 12px 20px;
+      margin-top: 10px;
+      padding: 10px;
       background: #22c55e;
       border: none;
-      border-radius: 8px;
       color: white;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 16px;
     }
 
     .btn:hover {
       background: #16a34a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    🚀 Sosyal Medya Büyütme
-  </header>
-
-  <div class="container">
-    <h1>Keşfete Çıkmanın Yolları</h1>
-    <p>Instagram, TikTok ve YouTube büyütme rehberi</p>
-
-    <button class="btn" onclick="alert('İçerikler yakında!')">
-      Başla
-    </button>
+  <div class="navbar">
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">YouTube</a>
   </div>
+
+  <div class="hero">
+    <h1>🚀 Sosyal Medya Büyütme</h1>
+    <p>Keşfete çıkma ve viral olma rehberi</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Instagram</h3>
+      <p>Keşfete düşme taktikleri</p>
+      <button class="btn" onclick="alert('Instagram rehberi yakında!')">Oku</button>
+    </div>
+
+    <div class="card">
+      <h3>TikTok</h3>
+      <p>Viral olma stratejileri</p>
+      <button class="btn" onclick="alert('TikTok rehberi yakında!')">Oku</button>
+    </div>
+
+    <div class="card">
+      <h3>YouTube</h3>
+      <p>İzlenme artırma yöntemleri</p>
+      <button class="btn" onclick="alert('YouTube rehberi yakında!')">Oku</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Sosyal Medya Rehberi
+  </footer>
 
 </body>
 </html>

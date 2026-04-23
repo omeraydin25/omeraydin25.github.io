@@ -1,118 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Sosyal Medya Büyütme</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-    }
+<meta charset="UTF-8">
+<title>baydınsal.oyunhizmetleri</title>
 
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #1e293b;
-      padding: 15px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* LOGIN */
+#login{
+  text-align:center;
+  padding-top:120px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
+input{
+  padding:10px;
+  margin:5px;
+}
 
-    h1 {
-      font-size: 40px;
-    }
+button{
+  padding:10px 20px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
 
-    p {
-      color: #cbd5e1;
-      font-size: 18px;
-    }
+/* TOPBAR */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  background:#1e293b;
+}
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
+.menu{
+  cursor:pointer;
+  font-size:22px;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-    }
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  right:-260px;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#111827;
+  padding:20px;
+  transition:0.3s;
+}
 
-    .btn {
-      margin-top: 10px;
-      padding: 10px;
-      background: #22c55e;
-      border: none;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+.sidebar a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  margin:15px 0;
+}
 
-    .btn:hover {
-      background: #16a34a;
-    }
+/* MAIN */
+.container{
+  text-align:center;
+  padding:40px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-    }
-  </style>
+.card{
+  background:#1e293b;
+  margin:10px auto;
+  width:200px;
+  padding:15px;
+  border-radius:10px;
+  cursor:pointer;
+}
+</style>
+
+<script>
+function login(){
+  document.getElementById("login").style.display="none";
+  document.getElementById("app").style.display="block";
+}
+
+function menu(){
+  let m=document.getElementById("side");
+  m.style.right = (m.style.right=="0px") ? "-260px":"0px";
+}
+
+function openPage(x){
+  alert(x + " paneli (demo) açıldı");
+}
+</script>
+
 </head>
 
 <body>
 
-  <div class="navbar">
-    <a href="#">Ana Sayfa</a>
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">YouTube</a>
+<!-- LOGIN -->
+<div id="login">
+  <h2>Giriş / Kayıt</h2>
+  <input placeholder="Kullanıcı adı"><br>
+  <input placeholder="Şifre" type="password"><br>
+  <button onclick="login()">Giriş Yap</button>
+  <p>Şifremi unuttum</p>
+  <p>KVKK Metni</p>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+
+  <div class="topbar">
+    <div>baydınsal.oyunhizmetleri</div>
+    <div class="menu" onclick="menu()">☰</div>
   </div>
 
-  <div class="hero">
-    <h1>🚀 Sosyal Medya Büyütme</h1>
-    <p>Keşfete çıkma ve viral olma rehberi</p>
+  <div id="side" class="sidebar">
+    <a href="#">Kategoriler</a>
+    <a href="#">Satın Alma Geçmişi</a>
+    <a href="#">Favoriler</a>
+    <a href="#">Çıkış</a>
   </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Instagram</h3>
-      <p>Keşfete düşme taktikleri</p>
-      <button class="btn" onclick="alert('Instagram rehberi yakında!')">Oku</button>
+  <div class="container">
+    <h1>Hoş Geldin 👋</h1>
+    <p>Kullanıcı: Demo Kullanıcı</p>
+
+    <div class="card" onclick="openPage('Instagram')">
+      Instagram<br>Beğeni / Görüntülenme (demo)
     </div>
 
-    <div class="card">
-      <h3>TikTok</h3>
-      <p>Viral olma stratejileri</p>
-      <button class="btn" onclick="alert('TikTok rehberi yakında!')">Oku</button>
+    <div class="card" onclick="openPage('TikTok')">
+      TikTok<br>İzlenme / Takip (demo)
     </div>
 
-    <div class="card">
-      <h3>YouTube</h3>
-      <p>İzlenme artırma yöntemleri</p>
-      <button class="btn" onclick="alert('YouTube rehberi yakında!')">Oku</button>
+    <div class="card" onclick="openPage('Telegram')">
+      Telegram (demo)
+    </div>
+
+    <div class="card" onclick="openPage('YouTube')">
+      YouTube (demo)
     </div>
   </div>
 
-  <footer>
-    © 2026 Sosyal Medya Rehberi
-  </footer>
+</div>
 
 </body>
 </html>
